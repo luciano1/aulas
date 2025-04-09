@@ -1,16 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.arcadenoe;
 
-/**
- *
- * @author Ludyla
- */
 public class ArcaDeNoe {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Animal x86 = new Animal("Zebralo", "Equino");
+        Animal normal = new Animal();
+        Animal cr7 = new Animal("Cristino Ronaldo", "Robozão");
+        
+        System.out.println("Nome do animal: "+x86.getNome());
+        System.out.println("Especie do animal: "+x86.getEspecie());
+        
+        System.out.println("Nome padrão: "+normal.getNome());
+        System.out.println("Especie padrão: "+normal.getEspecie());
     }
 }
