@@ -1,0 +1,88 @@
+Lista de Exercícios – JavaScript (Prática com Estruturas de Controle, Arrays e Objetos)
+Luciano Rocha
+
+
+1. Calculadora Simples
+- Peça ao usuário dois números.
+- Solicite a operação desejada: +, -, * ou /.
+- Retorne o resultado com base na operação escolhida.
+
+2. Array de Frutas
+Crie um array com pelo menos 5 frutas diferentes.
+Depois, no console, exiba:
+a) A primeira fruta.
+b) A última fruta.
+c) O tamanho do array.
+d) Adicione uma fruta usando push() e exiba o novo array.
+
+3. Laço for de 1 a 10
+- Utilize um laço for para exibir os números de 1 a 10 no console.
+
+4. Sistema de Notas com Condicional
+- Peça ao usuário uma nota de 0 a 10.
+- Exiba:
+  "Reprovado", se a nota for menor que 5.
+  "Recuperação", se estiver entre 5 e 6.9.
+  "Aprovado", se for 7 ou mais.
+Desafio extra:
+- Permita inserir várias notas em um array, calcule a média e informe a situação final com base na média.
+
+5. Maior de Três Números
+- Peça ao usuário três números.
+- Informe qual é o maior entre eles.
+
+6. Múltiplos de 3 de 1 a 50
+- Exiba no console todos os números entre 1 e 50 que sejam múltiplos de 3.
+
+7. String Concatenada de um Array
+Dado: let palavras = ["Oi", "meu nome", "não é Jhon", "nem será"];
+- Crie uma string concatenada com todos os valores desse array.
+
+8. Contar a letra 'a' em cada palavra
+- Dado um array de palavras, conte quantas vezes a letra 'a' aparece em cada palavra.
+- Utilize for...of e for...of aninhado.
+
+9. Somar Todos os Números de um Array
+Dado: let numeros = [1, 2, 3, 4, 5];
+- Calcule e exiba a soma de todos os números.
+
+10. Exibir Chaves e Valores de um Objeto
+Dado: let pessoa = { nome: "Ana", idade: 25, cidade: "São Paulo" };
+- Exiba todas as chaves e valores usando for...in.
+
+11. Contar Elementos de um Array (Sem length)
+- Crie um programa que conte quantos elementos existem em um array, sem utilizar .length.
+
+12. Array de Comprimentos das Palavras
+- Dado um array de palavras, crie um novo array contendo o comprimento (número de letras) de cada uma.
+
+13. Somar Valores Numéricos de um Objeto
+- Dado um objeto com várias chaves e valores numéricos, some todos os valores e exiba o total.
+
+14. Criar Array com Palavra e Seu Tamanho
+Dado: let palavras = ["sol", "lua", "estrela"];
+- Crie um novo array com objetos, cada um contendo:
+  A palavra.
+  O tamanho dela.
+Exemplo de resultado:
+[ { palavra: "sol", tamanho: 3 }, { palavra: "lua", tamanho: 3 }, { palavra: "estrela", tamanho: 7 } ]
+
+15. Simular um Caixa Eletrônico
+- Peça ao usuário o valor a ser sacado.
+- Calcule a quantidade mínima de notas de: R$100, R$50, R$20, R$10, R$5 e R$2.
+- Use estrutura de repetição e switch/case.
+- Exiba o resultado no console.
+
+16. Validador de Senhas
+Dado um array de senhas, crie um programa que para cada senha:
+- Verifique se possui:
+  8 ou mais caracteres.
+  1 número.
+  1 letra maiúscula.
+  1 caractere especial (@, #, $, %, etc).
+- Exiba se a senha é "válida" ou "inválida".
+
+17. Soma todos os numeros de 1 a 101, exceto os pares.
+
+18. Verificação de numero primo
+Faça um programa que verifique se um numero informado pelo usuário, é primo ou não.
