@@ -1,10 +1,19 @@
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <Body />
+      
+      <View style={styles.body}>
+        <Text style={styles.title}>Minhas Tarefas</Text>
+
+        <Tarefa titulo="Estudar React Native" />
+        <Tarefa titulo="Caminhar no quarteirão" />
+        <Tarefa titulo="Beber água" />
+      </View>
+
       <Footer />
     </View>
   );
@@ -13,19 +22,7 @@ export default function App() {
 function Header() {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerText}>Minhas Tarefas</Text>
-    </View>
-  );
-}
-
-function Body() {
-  return(
-    <View style={styles.body}>
-      <Text style={styles.text}>Bem-vindo ao App de Tarefas!</Text>
-      
-      <Tarefa a="Criar um footer"/>
-      <Tarefa a="Criar um body"/>
-      <Tarefa a="Criar um header"/>
+      <Text style={styles.headerText}> Minhas Tarefas</Text>
     </View>
   );
 }
@@ -33,15 +30,15 @@ function Body() {
 function Footer() {
   return (
     <View style={styles.footer}>
-      <Text style={styles.footerText}>A organização mora aqui!</Text>
+      <Text style={styles.footerText}>Desenvolvido na aula de React Native</Text>
     </View>
   );
 }
 
-function Tarefa(props){
-  return(
-    <View>
-      <Text>{props.a}</Text>
+function Tarefa(props) {
+  return (
+    <View style={styles.tarefa}>
+      <Text style={styles.tarefaTexto}> * {props.titulo}</Text>
     </View>
   );
 }
@@ -50,6 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F4F4F4',
+    justifyContent: 'space-between',
   },
   header: {
     backgroundColor: '#6200ee',
@@ -63,21 +61,29 @@ const styles = StyleSheet.create({
   },
   body: {
     padding: 20,
+    flex: 1,
   },
-  text: {
-    fontSize: 18,
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
     marginBottom: 20,
   },
-  footerText: {
-    fontFamily: 'Times New Roman',
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
+  tarefa: {
+    backgroundColor: '#e0e0e0',
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  tarefaTexto: {
+    fontSize: 16,
   },
   footer: {
     backgroundColor: '#ff9800',
-    paddingVertical: 70,
+    paddingVertical: 20,
     alignItems: 'center',
-    marginTop: 'auto',
+  },
+  footerText: {
+    color: 'white',
+    fontSize: 14,
   },
 });
