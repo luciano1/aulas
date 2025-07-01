@@ -1,17 +1,39 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet, FlatList } from 'react-native';
 
 export default function App() {
+  const [tarefas, setTarefas] = useState([]);
+  const [novaTarefa, setNovaTarefa] = useState('');
+
+  function adicionarTarefa() {
+    if (novaTarefa.trim() === '') return;
+
+    setTarefas([...tarefas, { id: Date.now().toString(), titulo: novaTarefa }]);
+    setNovaTarefa('');
+  }
+
   return (
     <View style={styles.container}>
       <Header />
-      
+
       <View style={styles.body}>
         <Text style={styles.title}>Minhas Tarefas</Text>
 
-        <Tarefa titulo="Estudar React Native" />
-        <Tarefa titulo="Caminhar no quarteirão" />
-        <Tarefa titulo="Beber água" />
+        <TextInput
+          style={styles.input}
+          placeholder="Digite uma nova tarefa"
+          value={novaTarefa}
+          onChangeText={setNovaTarefa}
+        />
+
+        <Button title="Adicionar" onPress={adicionarTarefa} />
+
+        <FlatList
+          data={tarefas}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <Tarefa titulo={item.titulo} />}
+          style={{ marginTop: 20 }}
+        />
       </View>
 
       <Footer />
@@ -38,7 +60,7 @@ function Footer() {
 function Tarefa(props) {
   return (
     <View style={styles.tarefa}>
-      <Text style={styles.tarefaTexto}> * {props.titulo}</Text>
+      <Text style={styles.tarefaTexto}>{props.titulo}</Text>
     </View>
   );
 }
@@ -67,6 +89,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
+  },
+  input: {
+    backgroundColor: 'white',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 10,
+    borderColor: '#ddd',
+    borderWidth: 1,
   },
   tarefa: {
     backgroundColor: '#e0e0e0',
