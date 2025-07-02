@@ -1,66 +1,77 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, FlatList } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput,FlatList} from 'react-native';
 
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
   const [novaTarefa, setNovaTarefa] = useState('');
+  const [pretoBranco, setPretoBranco] = useState(false);
+
+  const estiloFundo = pretoBranco ? styles.pretoBranco : styles.normal;
+  const estiloTexto = pretoBranco ? styles.textoPB : styles.textoColorido;
+  const estiloHeader = pretoBranco ? styles.headerPB : styles.headerColorido;
+  const estiloFooter = pretoBranco ? styles.footerPB : styles.footerColorido;
 
   function adicionarTarefa() {
     if (novaTarefa.trim() === '') return;
-
-    setTarefas([...tarefas, { id: Date.now().toString(), titulo: novaTarefa }]);
+    setTarefas([...tarefas, {titulo: novaTarefa }]);
     setNovaTarefa('');
   }
 
   return (
-    <View style={styles.container}>
-      <Header />
+    <View style={[styles.container, estiloFundo]}>
+      {/* Botão no canto superior direito */}
+      <View style={styles.botaoTopoDireita}>
+        <Button
+          title="PB"
+          onPress={() => setPretoBranco(!pretoBranco)}
+          color={pretoBranco ? '#000' : '#555'}
+        />
+      </View>
 
+      <Header estiloHeader={estiloHeader} estiloTexto={estiloTexto} />
       <View style={styles.body}>
-        <Text style={styles.title}>Minhas Tarefas</Text>
-
+        <Text style={[styles.title, estiloTexto]}>Minhas Tarefas</Text>
         <TextInput
           style={styles.input}
           placeholder="Digite uma nova tarefa"
           value={novaTarefa}
           onChangeText={setNovaTarefa}
         />
-
         <Button title="Adicionar" onPress={adicionarTarefa} />
-
         <FlatList
           data={tarefas}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Tarefa titulo={item.titulo} />}
+          renderItem={({ item }) => <Tarefa titulo={item.titulo} estiloTexto={estiloTexto} />}
           style={{ marginTop: 20 }}
         />
+
+
       </View>
-
-      <Footer />
+      <Footer estiloFooter={estiloFooter} estiloTexto={estiloTexto} />
     </View>
   );
 }
 
-function Header() {
+function Header({ estiloHeader, estiloTexto }) {
   return (
-    <View style={styles.header}>
-      <Text style={styles.headerText}> Minhas Tarefas</Text>
+    <View style={[styles.headerBase, estiloHeader]}>
+      <Text style={[styles.headerText, estiloTexto]}>Minhas Tarefas</Text>
     </View>
   );
 }
 
-function Footer() {
+function Footer({ estiloFooter, estiloTexto }) {
   return (
-    <View style={styles.footer}>
-      <Text style={styles.footerText}>Desenvolvido na aula de React Native</Text>
+    <View style={[styles.footerBase, estiloFooter]}>
+      <Text style={[styles.footerText, estiloTexto]}>Desenvolvido na aula de React Native</Text>
     </View>
   );
 }
 
-function Tarefa(props) {
+function Tarefa({ titulo, estiloTexto }) {
   return (
     <View style={styles.tarefa}>
-      <Text style={styles.tarefaTexto}>{props.titulo}</Text>
+      <Text style={[styles.tarefaTexto, estiloTexto]}>{titulo}</Text>
     </View>
   );
 }
@@ -68,35 +79,49 @@ function Tarefa(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F4F4',
     justifyContent: 'space-between',
   },
-  header: {
-    backgroundColor: '#6200ee',
+  normal: {
+    backgroundColor: '#F4F4F4',
+  },
+  pretoBranco: {
+    backgroundColor: '#000',
+  },
+  textoColorido: {
+    color: '#333',
+  },
+  textoPB: {
+    color: '#fff',
+  },
+  botaoTopoDireita: {
+    position: 'absolute',
+    top: 40,
+    right: 20,
+    zIndex: 1,
+  },
+  headerBase: {
     paddingVertical: 40,
     paddingHorizontal: 20,
   },
+  headerColorido: {
+    backgroundColor: '#6200ee',
+  },
+  headerPB: {
+    backgroundColor: '#222',
+  },
   headerText: {
-    color: 'white',
     fontSize: 22,
     fontWeight: 'bold',
   },
   body: {
     padding: 20,
     flex: 1,
+    marginTop: 80, // para não ficar escondido atrás do botão
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
-  },
-  input: {
-    backgroundColor: 'white',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 10,
-    borderColor: '#ddd',
-    borderWidth: 1,
   },
   tarefa: {
     backgroundColor: '#e0e0e0',
@@ -107,13 +132,17 @@ const styles = StyleSheet.create({
   tarefaTexto: {
     fontSize: 16,
   },
-  footer: {
-    backgroundColor: '#ff9800',
+  footerBase: {
     paddingVertical: 20,
     alignItems: 'center',
   },
+  footerColorido: {
+    backgroundColor: '#ff9800',
+  },
+  footerPB: {
+    backgroundColor: '#444',
+  },
   footerText: {
-    color: 'white',
     fontSize: 14,
   },
 });
