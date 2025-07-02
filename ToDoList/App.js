@@ -13,8 +13,11 @@ export default function App() {
 
   function adicionarTarefa() {
     if (novaTarefa.trim() === '') return;
-    setTarefas([...tarefas, {titulo: novaTarefa }]);
+    setTarefas([...tarefas, { id: Date.now().toString(), titulo: novaTarefa }]);
     setNovaTarefa('');
+  }
+  const deletarTarefa=(id)=>{
+    setTarefas(tarefas.filter(tarefa=> tarefa.id !== id));
   }
 
   return (
@@ -41,7 +44,12 @@ export default function App() {
         <FlatList
           data={tarefas}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Tarefa titulo={item.titulo} estiloTexto={estiloTexto} />}
+          renderItem={({ item }) => 
+            <Tarefa 
+              titulo={item.titulo} 
+              estiloTexto={estiloTexto}
+              onDelete={()=>deletarTarefa(item.id)} 
+            />}
           style={{ marginTop: 20 }}
         />
 
@@ -68,10 +76,11 @@ function Footer({ estiloFooter, estiloTexto }) {
   );
 }
 
-function Tarefa({ titulo, estiloTexto }) {
+function Tarefa({ titulo, estiloTexto,onDelete }) {
   return (
     <View style={styles.tarefa}>
-      <Text style={[styles.tarefaTexto, estiloTexto]}>{titulo}</Text>
+      <Text style={[styles.tarefaTexto, estiloTexto]}>{titulo} </Text>
+      <Button title="Deletar" onPress={onDelete} />
     </View>
   );
 }
