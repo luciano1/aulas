@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput,FlatList} from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput,FlatList, CheckBox, TouchableOpacity} from 'react-native';
 
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
@@ -19,7 +19,11 @@ export default function App() {
   const deletarTarefa=(id)=>{
     setTarefas(tarefas.filter(tarefa=> tarefa.id !== id));
   }
-
+  const toggleTarefaCompletion = (id) => {
+    setTarefas(tarefas.map(tarefa =>
+      tarefa.id === id ? { ...tarefa, completed: !tarefa.completed } : tarefa
+    ));
+  };
   return (
     <View style={[styles.container, estiloFundo]}>
       {/* Botão no canto superior direito */}
@@ -45,10 +49,12 @@ export default function App() {
           data={tarefas}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => 
-            <Tarefa 
-              titulo={item.titulo} 
+          <Tarefa
+              titulo={item.titulo}
               estiloTexto={estiloTexto}
-              onDelete={()=>deletarTarefa(item.id)} 
+              onDelete={() => deletarTarefa(item.id)}
+              completed={item.completed}
+              onToggleCompletion={() => toggleTarefaCompletion(item.id)}
             />}
           style={{ marginTop: 20 }}
         />
@@ -76,11 +82,17 @@ function Footer({ estiloFooter, estiloTexto }) {
   );
 }
 
-function Tarefa({ titulo, estiloTexto,onDelete }) {
+function Tarefa({ titulo, estiloTexto,onDelete, completed, onToggleCompletion }) {
   return (
     <View style={styles.tarefa}>
+      <CheckBox
+        value={completed}
+        onValueChange={onToggleCompletion}
+        style={styles.checkbox}
+      />
       <Text style={[styles.tarefaTexto, estiloTexto]}>{titulo} </Text>
-      <Button title="Deletar" onPress={onDelete} />
+      <TouchableOpacity onPress={onDelete} style={styles.deleteButton}> X 
+      </TouchableOpacity>
     </View>
   );
 }
@@ -154,4 +166,18 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 14,
   },
+  input:{
+    marginBottom:15,
+    deleteButton: {
+    backgroundColor: '#ff4d4d',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 5,
+  },
+    deleteButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  }
+
+  }
 });
