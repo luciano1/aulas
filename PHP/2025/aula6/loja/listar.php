@@ -3,6 +3,8 @@ require "db.php";
 
 $resultado = $pdo->query("SELECT * FROM produtos");
 
+echo '<p><a href="add.php">+ Novo produto</a></p>';
+
 echo "<h2>Lista de Produtos</h2>";
 echo "<table border='1' cellpadding='5'>";
 echo "<tr><th>ID</th><th>Nome</th><th>Preço</th><th>Estoque</th></tr>";
