@@ -1,11 +1,7 @@
 <?php
 require "db.php";
 
-$nome    = $_POST["nome"];
-$preco   = $_POST["preco"];
-$estoque = $_POST["estoque"];
+$pdo->prepare("INSERT INTO produtos (nome, preco, estoque) VALUES (?, ?, ?)")
+    ->execute([$_POST["nome"], $_POST["preco"], $_POST["estoque"]]);
 
-$stmt = $pdo->prepare("INSERT INTO produtos (nome, preco, estoque) VALUES (?, ?, ?)");
-$stmt->execute([$nome, $preco, $estoque]);
-
-header("Location: listar.php");
+    header("Location: listar.php");
