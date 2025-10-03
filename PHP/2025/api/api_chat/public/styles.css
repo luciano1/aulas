@@ -1,0 +1,6 @@
+/* public/styles.css */
+.chat-window{ height: 50vh; overflow-y: auto; background:#f8f9fa; padding:1rem; border-radius:.5rem; border:1px solid #e9ecef; }
+.chat-row{ display:flex; margin-bottom:.75rem; }
+.bubble{ max-width:75%; padding:.6rem .8rem; border-radius:1rem; line-height:1.35; white-space:pre-wrap; }
+.bubble-user{ margin-left:auto; background:#0d6efd; color:#fff; border-bottom-right-radius:.25rem; }
+.bubble-assistant{ margin-right:auto; background:#fff; border:1px solid #e9ecef; border-bottom-left-radius:.25rem; }
