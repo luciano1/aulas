@@ -1,0 +1,125 @@
+package com.mycompany.herancaepolimorfismo;
+
+// ==========================================================
+// EXEMPLO DE HERANÇA, POLIMORFISMO E ENCAPSULAMENTO EM JAVA
+// ==========================================================
+
+// Classe pai
+class Animal {
+    // Encapsulamento: atributos privados
+    private String nome;
+    private int idade;
+
+    // Construtor vazio
+    Animal() {
+    }
+
+    // Construtor com parâmetros
+    Animal(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Get e Set
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        if (idade >= 0) {
+            this.idade = idade;
+        }
+    }
+
+    // Método comum
+    void emitirSom() {
+        System.out.println("Faz barulho");
+    }
+
+    // Método com retorno
+    String apresentar() {
+        return "Nome: " + nome + " | Idade: " + idade;
+    }
+}
+
+// Classe filha
+class Cachorro extends Animal {
+    private String pedigree;
+
+    Cachorro(String nome, int idade, String pedigree) {
+        super(nome, idade); // chama construtor da classe pai
+        this.pedigree = pedigree;
+    }
+
+    public String getPedigree() {
+        return pedigree;
+    }
+
+    public void setPedigree(String pedigree) {
+        this.pedigree = pedigree;
+    }
+
+    @Override
+    void emitirSom() {
+        System.out.println("AU AU");
+    }
+}
+
+// Outra classe filha
+class Gato extends Animal {
+    private int numVidas;
+
+    Gato(String nome, int idade, int numVidas) {
+        super(nome, idade);
+        this.numVidas = numVidas;
+    }
+
+    public int getNumVidas() {
+        return numVidas;
+    }
+
+    public void setNumVidas(int numVidas) {
+        if (numVidas >= 0) {
+            this.numVidas = numVidas;
+        }
+    }
+
+    @Override
+    void emitirSom() {
+        System.out.println("MIAU");
+    }
+}
+
+public class HerancaEPolimorfismo {
+    public static void main(String[] args) {
+
+        // Criando objetos com construtor
+        Cachorro c1 = new Cachorro("Rex", 5, "ABC123");
+        Gato g1 = new Gato("Mimi", 2, 7);
+
+        // Polimorfismo: cada classe sobrescreve emitirSom()
+        c1.emitirSom();
+        g1.emitirSom();
+
+        // Exibindo dados com método com retorno + getters
+        System.out.println(c1.apresentar() + " | Pedigree: " + c1.getPedigree());
+        System.out.println(g1.apresentar() + " | Vidas: " + g1.getNumVidas());
+
+        // Alterando valores com set
+        c1.setNome("Bolt");
+        c1.setIdade(6);
+        g1.setNumVidas(6);
+
+        System.out.println("\nApós alteração:");
+        System.out.println(c1.apresentar() + " | Pedigree: " + c1.getPedigree());
+        System.out.println(g1.apresentar() + " | Vidas: " + g1.getNumVidas());
+    }
+}
