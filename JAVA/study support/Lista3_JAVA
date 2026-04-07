@@ -1,0 +1,160 @@
+Curso Técnico em Desenvolvimento de Sistemas – PROZ EDUCAÇÃO
+LISTA DE EXERCÍCIOS – JAVA (FOCO EM POO)
+Professor: Luciano Rocha
+
+TEMA: POO, ENCAPSULAMENTO, CONSTRUTOR, THIS, HERANÇA E POLIMORFISMO
+
+INSTRUÇÕES:
+- Responda as questões teóricas de forma clara.
+- Desenvolva todas as práticas em Java.
+- Utilize boas práticas de programação.
+- Aplique encapsulamento sempre que possível.
+
+==================================================
+PARTE I – QUESTÕES TEÓRICAS
+==================================================
+
+1) Explique o conceito de Programação Orientada a Objetos.
+
+--------------------------------------------------
+
+2) Diferencie classe e objeto com exemplos.
+
+--------------------------------------------------
+
+3) O que são atributos e métodos?
+
+--------------------------------------------------
+
+4) Explique o conceito de encapsulamento.
+
+--------------------------------------------------
+
+5) Qual a função dos métodos get e set?
+
+--------------------------------------------------
+
+6) O que é um construtor? Quando ele é executado?
+
+--------------------------------------------------
+
+7) Explique o uso da palavra-chave this.
+
+--------------------------------------------------
+
+8) O que é herança em Java?
+
+--------------------------------------------------
+
+9) O que é polimorfismo? Explique sobrescrita de métodos.
+
+--------------------------------------------------
+
+10) Para que serve a palavra-chave super?
+
+==================================================
+PARTE II – QUESTÕES PRÁTICAS (FOCO EM POO)
+==================================================
+
+11) Crie uma classe Pessoa com:
+- atributos private: nome, idade
+- getters e setters
+- método apresentar()
+
+--------------------------------------------------
+
+12) Crie uma classe Produto com:
+- atributos private
+- construtor com parâmetros
+- método com retorno para exibir dados
+
+--------------------------------------------------
+
+13) Crie uma classe Aluno com:
+- nome, nota1, nota2
+- método calcularMedia()
+- método verificarSituacao()
+
+--------------------------------------------------
+
+14) Crie uma classe Conta com:
+- saldo private
+- método depositar()
+- método sacar() com validação
+
+--------------------------------------------------
+
+15) Crie uma classe Carro com:
+- marca, modelo
+- construtor
+- método exibirDados()
+
+--------------------------------------------------
+
+16) Crie uma classe Animal com:
+- nome, idade
+- método emitirSom()
+
+--------------------------------------------------
+
+17) Crie uma classe Cachorro que herda de Animal:
+- atributo raca
+- sobrescreva emitirSom()
+
+--------------------------------------------------
+
+18) Crie uma classe Gato que herda de Animal:
+- atributo numVidas
+- sobrescreva emitirSom()
+
+--------------------------------------------------
+
+19) Crie uma classe Veiculo:
+- marca, ano
+- método ligar()
+
+--------------------------------------------------
+
+20) Crie uma classe Moto que herda de Veiculo:
+- cilindrada
+- sobrescreva ligar()
+
+--------------------------------------------------
+
+21) Crie uma classe Funcionario:
+- nome, salario
+- método calcularSalario()
+
+--------------------------------------------------
+
+22) Crie uma classe Gerente que herda de Funcionario:
+- bonus
+- sobrescreva calcularSalario()
+
+--------------------------------------------------
+
+23) Crie uma hierarquia:
+Animal -> Mamifero -> Marsupial
+Incluindo:
+- encapsulamento
+- construtor com super
+- método com retorno
+
+--------------------------------------------------
+
+24) Crie uma classe Pessoa com validação:
+- nome (somente letras)
+- codigo (somente números)
+- idade (não negativa)
+
+--------------------------------------------------
+
+25) Desenvolva um sistema completo com:
+- classe pai
+- duas classes filhas
+- encapsulamento
+- construtores
+- métodos com retorno
+- sobrescrita
+
+==================================================
