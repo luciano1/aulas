@@ -67,7 +67,7 @@ guia-html-definitivo/
 1. Faça o download ou clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/guia-html-definitivo.git
+git clone https://github.com/luciano1/HTML_The_Complete_Guide.git
 ```
 
 2. Abra o arquivo `index.html` em seu navegador
