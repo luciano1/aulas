@@ -1,0 +1,114 @@
+LISTA DE EXERCÍCIOS – REVISÃO GERAL JAVASCRIPT
+Disciplina: Programação Front-End / JavaScript
+Professor: Luciano Rocha
+
+OBJETIVO
+Revisar os principais conceitos de JavaScript por meio de exercícios práticos envolvendo variáveis, operadores, condicionais, laços, funções, arrays, objetos e métodos.
+
+
+1. Variáveis e tipos
+   Crie variáveis para armazenar:
+
+* seu nome
+* sua idade
+* se você é estudante (true/false)
+  Exiba tudo no console.
+
+2. Operadores
+   Crie um programa que:
+
+* receba dois números
+* exiba soma, subtração, multiplicação e divisão
+
+3. Condicional simples
+   Crie um programa que:
+
+* receba a idade de uma pessoa
+* informe se ela é menor ou maior de idade
+
+4. Comparação
+   Explique com código a diferença entre == e ===
+
+5. Estrutura if/else
+   Crie um programa que:
+
+* receba uma nota (0 a 10)
+* informe: aprovado (>=7), recuperação (>=5 e <7), reprovado (<5)
+
+6. Laço for
+   Exiba os números de 1 até 10 no console.
+
+7. Soma com repetição
+   Some os números de 1 até 100 e mostre o resultado.
+
+8. Números pares
+   Mostre todos os números pares de 1 a 50.
+
+9. Função simples
+   Crie uma função que receba dois números e retorne a soma.
+
+10. Função com condição
+    Crie uma função que receba um número e retorne "Par" ou "Ímpar".
+
+---
+
+PARTE 3 – ARRAYS E OBJETOS
+
+11. Array básico
+    Crie um array com 5 nomes e:
+
+* exiba todos
+* exiba o primeiro e o último
+
+12. Métodos de array
+    Dado: let numeros = [10, 20, 30];
+
+* adicione um número no final
+* remova o último
+* exiba o resultado
+
+13. Objeto simples
+    Crie um objeto aluno com nome, idade e nota. Exiba os dados.
+
+14. Array de objetos
+    Crie um array com 3 alunos (nome e nota) e exiba todos.
+
+---
+
+PARTE 4 – MÉTODOS AVANÇADOS
+
+15. map()
+    Dado um array, crie outro com o dobro dos valores.
+
+16. filter()
+    Filtre apenas números pares de um array.
+
+17. reduce()
+    Some todos os números de um array usando reduce.
+
+18. Manipulação de objetos
+    Dado um array de alunos com notas:
+
+* exiba apenas os aprovados
+* calcule a média da turma
+
+---
+
+PARTE 5 – DESAFIOS
+
+19. String invertida
+    Crie uma função que inverta uma string.
+
+20. Contador de palavras
+    Receba uma frase e conte quantas palavras existem.
+
+21. Maior número
+    Dado um array, retorne o maior valor.
+
+22. Sistema simples
+    Crie um sistema com:
+
+* array de usuários
+* função para adicionar
+* função para listar
+
