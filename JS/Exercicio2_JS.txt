@@ -1,0 +1,48 @@
+PRÁTICAS – COMPONENTES E PROPS
+Disciplina: React JS
+Professor: Luciano Rocha
+
+---
+
+PRÁTICA 1 – SIMPLES (Boas-vindas)
+
+Crie um componente chamado BoasVindas.jsx que:
+
+* receba uma prop chamada nome
+* exiba: "Bem-vindo, NOME!"
+
+Depois, utilize o componente 3 vezes no App.jsx com nomes diferentes.
+
+---
+
+PRÁTICA 2 – AVANÇADA (Produto)
+
+Crie um componente chamado ProdutoCard.jsx que:
+
+* receba as props:
+
+  * nome
+  * preco
+  * categoria
+
+Exiba essas informações na tela.
+
+Depois, utilize o componente 3 vezes com produtos diferentes.
+
+---
+
+DESAFIO EXTRA
+
+Adicione uma prop chamada disponivel (true/false) e exiba:
+
+* "Em estoque"
+* "Indisponível"
+
+---
+
+OBJETIVO
+
+* entender criação de componentes
+* usar props
+* reutilizar código
+* preparar para listas dinâmicas
