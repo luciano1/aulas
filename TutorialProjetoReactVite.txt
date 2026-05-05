@@ -1,0 +1,97 @@
+CRIAÇÃO DE PROJETO REACT (VITE) – PASSO A PASSO
+Disciplina: React JS
+Professor: Luciano Rocha
+
+OBJETIVO
+Criar um projeto React do zero utilizando Vite.
+
+---
+
+PASSO 1 – Abrir o terminal
+Pode ser:
+
+* Terminal do VS Code
+* Prompt de comando
+
+---
+
+PASSO 2 – Criar o projeto
+
+Comando:
+npm create vite@latest
+
+---
+
+PASSO 3 – Configurar o projeto
+
+Responder no terminal:
+
+* Nome do projeto → exemplo: meu-app
+* Framework → React
+* Variante → JavaScript
+
+---
+
+PASSO 4 – Entrar na pasta do projeto
+
+Comando:
+cd meu-app
+
+---
+
+PASSO 5 – Instalar dependências
+
+Comando:
+npm install
+
+---
+
+PASSO 6 – Rodar o projeto
+
+Comando:
+npm run dev
+
+---
+
+PASSO 7 – Abrir no navegador
+
+Exemplo:
+http://localhost:5173
+
+---
+
+PASSO 8 – Testar alteração
+
+Abrir o arquivo:
+src/App.jsx
+
+Substituir por:
+
+function App() {
+return <h1>React funcionando!</h1>;
+}
+
+export default App;
+
+---
+
+PROBLEMAS COMUNS
+
+node não reconhecido
+→ instalar Node.js
+
+erro ao rodar
+→ executar novamente npm install
+
+porta ocupada
+→ usar:
+npm run dev -- --port=5174
+
+---
+
+RESUMO DOS COMANDOS
+
+npm create vite@latest
+cd nome-do-projeto
+npm install
+npm run dev
