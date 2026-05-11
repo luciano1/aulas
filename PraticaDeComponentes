@@ -1,0 +1,87 @@
+PRÁTICA – COMPONENTES E PROPS
+Disciplina: React JS
+Professor: Luciano Rocha
+
+OBJETIVO
+Transformar o código abaixo em componentes React reutilizáveis.
+
+---
+
+ORIENTAÇÕES
+
+Separe o projeto em componentes dentro da pasta:
+
+src/components/
+
+Crie componentes para:
+
+* título da página
+* perfil do aluno
+* lista de disciplinas
+* rodapé
+
+Utilize props quando necessário.
+
+---
+
+ESTRUTURA ESPERADA
+
+src/
+├─ App.jsx
+├─ components/
+│   ├─ Header.jsx
+│   ├─ PerfilAluno.jsx
+│   ├─ ListaDisciplinas.jsx
+│   └─ Footer.jsx
+
+---
+
+CÓDIGO BASE
+
+```jsx
+function App() {
+  const nome = "Ana Clara";
+  const curso = "Desenvolvimento de Sistemas";
+  const cidade = "Montes Claros";
+
+  return (
+    <div>
+      <h1>Perfil do Aluno</h1>
+
+      <div>
+        <h2>{nome}</h2>
+        <p>Curso: {curso}</p>
+        <p>Cidade: {cidade}</p>
+      </div>
+
+      <hr />
+
+      <div>
+        <h2>Disciplinas</h2>
+        <ul>
+          <li>React JS</li>
+          <li>JavaScript</li>
+          <li>Programação Front-End</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div>
+        <p>Projeto desenvolvido na aula de React.</p>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+DESAFIO EXTRA
+
+* adicionar mais disciplinas
+* adicionar idade do aluno
+* estilizar os componentes
+* reutilizar o componente PerfilAluno com outros dados
