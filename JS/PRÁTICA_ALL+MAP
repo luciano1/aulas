@@ -1,0 +1,117 @@
+PRÁTICA – COMPONENTES + PROPS + MAP
+Disciplina: React JS
+Professor: Luciano Rocha
+
+OBJETIVO
+Transformar o código abaixo em uma aplicação organizada utilizando:
+
+* componentes
+* props
+* arrays
+* map()
+
+---
+
+ORIENTAÇÕES
+
+O código atual possui apenas dados estáticos no App.jsx.
+
+Sua tarefa será:
+
+1. Separar o sistema em componentes
+2. Criar um array de alunos
+3. Utilizar map() para renderizar os alunos dinamicamente
+4. Reutilizar o componente de perfil
+
+---
+
+COMPONENTES ESPERADOS
+
+Criar os componentes:
+
+* Header.jsx
+* PerfilAluno.jsx
+* Footer.jsx
+
+---
+
+ESTRUTURA ESPERADA
+
+src/
+├─ App.jsx
+├─ components/
+│   ├─ Header.jsx
+│   ├─ PerfilAluno.jsx
+│   └─ Footer.jsx
+
+---
+
+CÓDIGO BASE
+
+```jsx
+function App() {
+  // Dados estáticos
+  const nome = "Ana Clara";
+  const curso = "React JS";
+  const cidade = "Montes Claros";
+
+  return (
+    <div>
+      {/* Header */}
+      <div>
+        <h1>Sistema de Alunos</h1>
+        <hr />
+      </div>
+
+      {/* Perfil do aluno */}
+      <div>
+        <h2>{nome}</h2>
+
+        <p>Curso: {curso}</p>
+
+        <p>Cidade: {cidade}</p>
+
+        <hr />
+      </div>
+
+      {/* Rodapé */}
+      <div>
+        <p>Projeto desenvolvido na aula de React.</p>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+ARRAY DE ALUNOS
+
+Utilize o array abaixo para renderizar os alunos com map():
+
+```jsx
+const alunos = [
+  {
+    nome: "Ana Clara",
+    curso: "React JS",
+    cidade: "Montes Claros"
+  },
+
+  {
+    nome: "Carlos Eduardo",
+    curso: "JavaScript",
+    cidade: "Janaúba"
+  }
+];
+```
+
+---
+
+DESAFIO EXTRA
+
+* adicionar mais alunos
+* adicionar idade
+* exibir quantidade total de alunos
+* estilizar os componentes
