@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 function FormularioAnimal({ adicionarAnimal }) {
   // Estados dos inputs
@@ -6,7 +7,14 @@ function FormularioAnimal({ adicionarAnimal }) {
   const [raca, setRaca] = useState("");
   const [nome, setNome] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem("animais", JSON.stringify(nome));
+    localStorage.setItem("animais", JSON.stringify(raca));
+    localStorage.setItem("animais", JSON.stringify(animal));
+  }, [nome, raca, animal]);
+
   function salvarAnimal(evento) {
+    //função que salva todos os animais. Alteração e criação
     evento.preventDefault(); // Correção: use o parâmetro 'evento' recebido na função
 
     // Validação simples

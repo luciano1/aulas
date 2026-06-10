@@ -1,3 +1,5 @@
+//import EditIcon from '@mui/icons-material/Edit';
+
 function ListaAnimais({ animais }) {
   return (
     <section className="lista">
@@ -9,6 +11,8 @@ function ListaAnimais({ animais }) {
           <h3>{item.nome}</h3>
           <p>Animal: {item.animal}</p>
           <p>Raça: {item.raca}</p>
+          <p>
+          </p>
         </div>
       ))}
     </section>
