@@ -1,78 +1,34 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Livro</title>
+</head>
+<body>
+    <h2>Cadastrar Novo Livro</h2>
+    <!-- O action define para onde enviar; o method define o envio via URL -->
+    <form action="salvar.php" method="GET">
+        <label>Título:</label><br>
+        <input type="text" name="campo-titulo" required><br><br>
 
-$titulo = "";
-$autor = "há gata";
-$quantidade = 4;
-$ano = 2023;
-$categoria = "Tecnologia";
+        <label>Autor:</label><br>
+        <input type="text" name="campo-autor" required><br><br>
 
-function validarTitulo($titulo)
-{
-    if (empty($titulo)) {
-        return false;
-    }
+        <label>Quantidade:</label><br>
+        <input type="number" name="campo-quantidade" value="0" required><br><br>
 
-    return true;
-}
+        <label>Ano de Publicação:</label><br>
+        <input type="number" name="campo-ano" value="2026" required><br><br>
 
-function validarAutor($autor)
-{
-    return !empty($autor);
-}
+        <label>Categoria:</label><br>
+        <select name="campo-categoria" required>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="História">História</option>
+            <option value="Romance">Romance</option>
+            <option value="Didático">Didático</option>
+        </select><br><br>
 
-function validarAno($ano)
-{
-    if ($ano > date("Y")) {
-        return false;
-    }
-
-    return true;
-}
-
-function validarQuantidade($quantidade)
-{
-    if ($quantidade < 0) {
-        return false;
-    }
-
-    return true;
-}
-
-function validarCategoria($categoria)
-{
-    $categorias = [
-        "Tecnologia",
-        "História",
-        "Romance",
-        "Didático"
-    ];
-
-    return in_array($categoria, $categorias);
-}
-
-function validarLivro(
-    $titulo,
-    $autor,
-    $quantidade,
-    $ano,
-    $categoria
-) {
-    return
-        validarAno($ano) &&
-        validarAutor($autor) &&
-        validarCategoria($categoria) &&
-        validarTitulo($titulo) &&
-        validarQuantidade($quantidade);
-}
-
-if (validarLivro(
-    $titulo,
-    $autor,
-    $quantidade,
-    $ano,
-    $categoria
-)) {
-    echo "<h1>Livro cadastrado.<h1/>";
-} else {
-    echo "<script>alert('Livro inválido');</script>";
-}
+        <button type="submit">Cadastrar Livro</button>
+    </form>
+</body>
+</html>
