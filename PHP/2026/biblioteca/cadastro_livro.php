@@ -1,9 +1,15 @@
+<?php
+require_once "proteger.php";
+?>
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Livro</title>
 </head>
+
 <body>
     <h2>Cadastrar Novo Livro</h2>
     <!-- O action define para onde enviar; o method define o envio via URL -->
@@ -31,4 +37,5 @@
         <button type="submit">Cadastrar Livro</button>
     </form>
 </body>
+
 </html>

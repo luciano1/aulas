@@ -1,5 +1,5 @@
 <?php
-
+require_once "proteger.php";
 include "funcoes.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
