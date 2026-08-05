@@ -2,13 +2,13 @@
 require_once "proteger.php";
 include "funcoes.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $titulo = $_GET["campo-titulo"];
-    $autor = $_GET["campo-autor"];
-    $ano = $_GET["campo-ano"];
-    $quantidade = $_GET["campo-quantidade"];
-    $categoria = $_GET["campo-categoria"];
+    $titulo = $_POST["campo-titulo"];
+    $autor = $_POST["campo-autor"];
+    $ano = $_POST["campo-ano"];
+    $quantidade = $_POST["campo-quantidade"];
+    $categoria = $_POST["campo-categoria"];
 
     if (validarLivro(
         $titulo,
@@ -27,4 +27,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <br><br>
 
 <a href="index.php">Voltar</a>
-
