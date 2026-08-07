@@ -1,5 +1,6 @@
 <?php
 require_once "proteger.php";
+require_once "conexao.php";
 include "funcoes.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,6 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ano,
         $categoria
     )) {
+        $stmt = $pdo->prepare(
+            "INSERT INTO livros (titulo, autor, quantidade, ano, categoria)
+             VALUES (:titulo, :autor, :quantidade, :ano, :categoria)"
+        );
+
+        $stmt->execute([
+            ":titulo" => $titulo,
+            ":autor" => $autor,
+            ":quantidade" => $quantidade,
+            ":ano" => $ano,
+            ":categoria" => $categoria
+        ]);
+
         echo "Livro cadastrado com sucesso!";
     } else {
         echo "Livro inválido.";
