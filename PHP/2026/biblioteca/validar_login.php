@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
     $usuarioCorreto = "admin";
-    $senhaCorreta = "123456";
+    $senhaCorreta = "123";
 
     if ($usuario == $usuarioCorreto && $senha == $senhaCorreta) {
         $_SESSION["usuario"] = $usuario;
