@@ -1,6 +1,6 @@
 # Prática — Adicionar telefone ao cadastro
 
-## Com base no projeto https://github.com/luciano1/aulas/new/main/PHP/2024/aula8 :
+## Com base no [projeto](https://github.com/luciano1/aulas/tree/d807f127a9f8a4eb5b4f4787e692681241475500/PHP/2024/aula8) :
 ## Missão
 
 O sistema já permite cadastrar usuários com:
