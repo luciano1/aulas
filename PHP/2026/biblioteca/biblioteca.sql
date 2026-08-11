@@ -21,6 +21,16 @@ CREATE TABLE IF NOT EXISTS livros (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Tabela utilizada na prática de cadastro de revistas.
+CREATE TABLE IF NOT EXISTS revistas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    editora VARCHAR(100) NOT NULL,
+    ano INT NOT NULL,
+    quantidade INT NOT NULL DEFAULT 0,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO livros (titulo, autor, quantidade, ano, categoria)
 VALUES
     ('PHP para Web', 'João Silva', 5, 2025, 'Tecnologia'),
