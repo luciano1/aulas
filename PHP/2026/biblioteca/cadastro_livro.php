@@ -1,4 +1,6 @@
 <?php
+
+// Impede acesso de usuários sem login.
 require_once "proteger.php";
 ?>
 <!DOCTYPE html>
@@ -12,7 +14,8 @@ require_once "proteger.php";
 
 <body>
     <h2>Cadastrar Novo Livro</h2>
-    <!-- O action define para onde enviar; o method define o envio via URL -->
+
+    <!-- O formulário envia os dados do livro para salvar.php. -->
     <form action="salvar.php" method="POST">
         <label>Título:</label><br>
         <input type="text" name="campo-titulo" required><br><br>
@@ -36,6 +39,12 @@ require_once "proteger.php";
 
         <button type="submit">Cadastrar Livro</button>
     </form>
+
+    <br>
+
+    <a href="livros.php">Ver livros cadastrados</a>
+    <br><br>
+    <a href="home.php">Voltar</a>
 </body>
 
 </html>

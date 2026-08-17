@@ -47,8 +47,20 @@ $categoriaFavorita = $_COOKIE["categoria_favorita"] ?? "";
 
     <br><br>
 
+    <a href="livros.php">
+        Gerenciar livros
+    </a>
+
+    <br><br>
+
     <a href="cadastro_revista.php">
         Cadastrar revista
+    </a>
+
+    <br><br>
+
+    <a href="revistas.php">
+        Gerenciar revistas
     </a>
 
     <br><br>

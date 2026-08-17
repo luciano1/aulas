@@ -3,6 +3,7 @@
 // Protege a página e cria a conexão com o banco de dados.
 require_once "proteger.php";
 require_once "conexao.php";
+require_once "funcoes.php";
 
 // O cadastro só será executado quando o formulário usar POST.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,13 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantidade = $_POST["quantidade"] ?? "";
 
     // Faz uma validação simples antes de salvar no banco.
-    $dadosValidos =
-        !empty($titulo) &&
-        !empty($editora) &&
-        is_numeric($ano) &&
-        $ano <= date("Y") &&
-        is_numeric($quantidade) &&
-        $quantidade >= 0;
+    $dadosValidos = validarRevista(
+        $titulo,
+        $editora,
+        $ano,
+        $quantidade
+    );
 
     if ($dadosValidos) {
 
@@ -54,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br><br>
 
 <a href="cadastro_revista.php">Cadastrar outra revista</a>
+
+<br><br>
+
+<a href="revistas.php">Ver revistas cadastradas</a>
 
 <br><br>
 
