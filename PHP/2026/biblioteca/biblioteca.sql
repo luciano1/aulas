@@ -11,23 +11,17 @@ COLLATE utf8mb4_unicode_ci;
 
 USE biblioteca;
 
-CREATE TABLE IF NOT EXISTS livros (
+-- Recria a estrutura para manter a prática sempre igual.
+DROP TABLE IF EXISTS revistas;
+DROP TABLE IF EXISTS livros;
+
+CREATE TABLE livros (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     autor VARCHAR(120) NOT NULL,
     quantidade INT NOT NULL DEFAULT 0,
     ano INT NOT NULL,
     categoria VARCHAR(50) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Tabela utilizada na prática de cadastro de revistas.
-CREATE TABLE IF NOT EXISTS revistas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(100) NOT NULL,
-    editora VARCHAR(100) NOT NULL,
-    ano INT NOT NULL,
-    quantidade INT NOT NULL DEFAULT 0,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

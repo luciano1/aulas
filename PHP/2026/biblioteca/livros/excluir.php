@@ -1,15 +1,15 @@
 <?php
 
 // Protege a página e abre conexão com o banco.
-require_once "proteger.php";
-require_once "conexao.php";
+require_once "../includes/proteger.php";
+require_once "../config/conexao.php";
 
 // Recebe o ID enviado pela listagem.
 $id = $_GET["id"] ?? "";
 
 // Se o ID não for válido, volta para a listagem.
 if (!is_numeric($id)) {
-    header("Location: livros.php");
+    header("Location: listar.php");
     exit;
 }
 
@@ -21,7 +21,7 @@ $livro = $comando->fetch(PDO::FETCH_ASSOC);
 
 // Se não encontrar o livro, volta para a listagem.
 if (!$livro) {
-    header("Location: livros.php");
+    header("Location: listar.php");
     exit;
 }
 
@@ -44,14 +44,14 @@ if (!$livro) {
     </p>
 
     <!-- O POST confirma a exclusão do registro. -->
-    <form action="remover_livro.php" method="POST">
+    <form action="remover.php" method="POST">
         <input type="hidden" name="id" value="<?= htmlspecialchars($livro["id"]) ?>">
         <button type="submit">Sim, excluir</button>
     </form>
 
     <br>
 
-    <a href="livros.php">Cancelar</a>
+    <a href="listar.php">Cancelar</a>
 </body>
 
 </html>

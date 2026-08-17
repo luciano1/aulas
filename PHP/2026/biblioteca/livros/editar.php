@@ -1,15 +1,15 @@
 <?php
 
 // Protege a página e abre conexão com o banco.
-require_once "proteger.php";
-require_once "conexao.php";
+require_once "../includes/proteger.php";
+require_once "../config/conexao.php";
 
 // Recebe o ID enviado pelo link da listagem.
 $id = $_GET["id"] ?? "";
 
 // Se o ID não for numérico, volta para a listagem.
 if (!is_numeric($id)) {
-    header("Location: livros.php");
+    header("Location: listar.php");
     exit;
 }
 
@@ -21,7 +21,7 @@ $livro = $comando->fetch(PDO::FETCH_ASSOC);
 
 // Se não encontrar o livro, volta para a listagem.
 if (!$livro) {
-    header("Location: livros.php");
+    header("Location: listar.php");
     exit;
 }
 
@@ -38,8 +38,8 @@ if (!$livro) {
 <body>
     <h1>Editar Livro</h1>
 
-    <!-- Envia os dados alterados para atualizar_livro.php. -->
-    <form action="atualizar_livro.php" method="POST">
+    <!-- Envia os dados alterados para atualizar.php. -->
+    <form action="atualizar.php" method="POST">
         <input type="hidden" name="id" value="<?= htmlspecialchars($livro["id"]) ?>">
 
         <label for="titulo">Título:</label><br>
@@ -110,7 +110,7 @@ if (!$livro) {
 
     <br>
 
-    <a href="livros.php">Voltar</a>
+    <a href="listar.php">Voltar</a>
 </body>
 
 </html>

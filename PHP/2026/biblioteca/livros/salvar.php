@@ -1,9 +1,9 @@
 <?php
 
 // Protege a página e carrega conexão e funções de validação.
-require_once "proteger.php";
-require_once "conexao.php";
-include "funcoes.php";
+require_once "../includes/proteger.php";
+require_once "../config/conexao.php";
+require_once "../includes/funcoes.php";
 
 // O cadastro só será executado por envio de formulário.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,13 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     )) {
 
         // Prepara o SQL de cadastro com parâmetros.
-        $stmt = $pdo->prepare(
-            "INSERT INTO livros (titulo, autor, quantidade, ano, categoria)
-             VALUES (:titulo, :autor, :quantidade, :ano, :categoria)"
-        );
+        $sql = "INSERT INTO livros
+                (titulo, autor, quantidade, ano, categoria)
+                VALUES
+                (:titulo, :autor, :quantidade, :ano, :categoria)";
+
+        $comando = $pdo->prepare($sql);
 
         // Executa o cadastro usando os valores recebidos.
-        $stmt->execute([
+        $comando->execute([
             ":titulo" => $titulo,
             ":autor" => $autor,
             ":quantidade" => $quantidade,
@@ -40,20 +42,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
 
         echo "Livro cadastrado com sucesso!";
+
     } else {
+
         echo "Livro inválido.";
     }
 }
+
 ?>
 
 <br><br>
 
-<a href="cadastro_livro.php">Cadastrar outro livro</a>
+<a href="cadastrar.php">Cadastrar outro livro</a>
 
 <br><br>
 
-<a href="livros.php">Ver livros cadastrados</a>
+<a href="listar.php">Ver livros cadastrados</a>
 
 <br><br>
 
-<a href="home.php">Voltar para o início</a>
+<a href="../home.php">Voltar para o início</a>

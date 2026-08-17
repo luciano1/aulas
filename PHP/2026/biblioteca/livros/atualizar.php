@@ -1,9 +1,9 @@
 <?php
 
 // Protege a página e carrega conexão e validações.
-require_once "proteger.php";
-require_once "conexao.php";
-require_once "funcoes.php";
+require_once "../includes/proteger.php";
+require_once "../config/conexao.php";
+require_once "../includes/funcoes.php";
 
 // Atualização só deve acontecer por POST.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,4 +55,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <br><br>
 
-<a href="livros.php">Voltar para livros</a>
+<a href="listar.php">Voltar para livros</a>

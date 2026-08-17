@@ -1,7 +1,7 @@
 <?php
 
 // Protege o arquivo contra usuários não autenticados.
-require_once "proteger.php";
+require_once "../includes/proteger.php";
 
 // Verifica se o arquivo foi acessado
 // pelo envio de um formulário usando POST.
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         O cookie só estará disponível no array $_COOKIE
         na próxima requisição.
     */
-    header("Location: home.php");
+    header("Location: ../home.php");
 
     // Encerra a execução depois do redirecionamento.
     exit;
@@ -71,6 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Caso alguém acesse o arquivo diretamente,
 // sem enviar um formulário, volta para a página inicial.
-header("Location: home.php");
+header("Location: ../home.php");
 
 exit;

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Guarda o usuário na sessão para liberar páginas protegidas.
         $_SESSION["usuario"] = $usuario;
-        header("Location: home.php");
+        header("Location: ../home.php");
         exit;
     } else {
 

@@ -1,7 +1,7 @@
 <?php
 
 // Protege o arquivo contra usuários não autenticados.
-require_once "proteger.php";
+require_once "../includes/proteger.php";
 
 /*
     Para apagar um cookie, usamos o mesmo nome
@@ -17,6 +17,6 @@ setcookie(
 
 // Depois de apagar o cookie,
 // redireciona para a página inicial.
-header("Location: home.php");
+header("Location: ../home.php");
 
 exit;

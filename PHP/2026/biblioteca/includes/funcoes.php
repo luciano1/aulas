@@ -76,19 +76,3 @@ function validarLivro(
         validarTitulo($titulo) &&
         validarQuantidade($quantidade);
 }
-
-// Valida se a editora da revista foi preenchida.
-function validarEditora($editora)
-{
-    return !empty(trim($editora));
-}
-
-// Junta todas as validações necessárias para cadastrar ou editar revista.
-function validarRevista($titulo, $editora, $ano, $quantidade)
-{
-    return
-        validarTitulo($titulo) &&
-        validarEditora($editora) &&
-        validarAno($ano) &&
-        validarQuantidade($quantidade);
-}

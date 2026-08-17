@@ -1,8 +1,8 @@
 <?php
 
 // Protege a página e abre conexão com o banco.
-require_once "proteger.php";
-require_once "conexao.php";
+require_once "../includes/proteger.php";
+require_once "../config/conexao.php";
 
 // Busca todos os livros ordenados pelo título.
 $sql = "SELECT * FROM livros ORDER BY titulo";
@@ -22,7 +22,7 @@ $livros = $comando->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Livros cadastrados</h1>
 
-    <a href="cadastro_livro.php">Cadastrar novo livro</a>
+    <a href="cadastrar.php">Cadastrar novo livro</a>
     <br><br>
 
     <?php if (empty($livros)) { ?>
@@ -54,9 +54,9 @@ $livros = $comando->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($livro["ano"]) ?></td>
                         <td><?= htmlspecialchars($livro["categoria"]) ?></td>
                         <td>
-                            <a href="editar_livro.php?id=<?= $livro["id"] ?>">Editar</a>
+                            <a href="editar.php?id=<?= $livro["id"] ?>">Editar</a>
                             |
-                            <a href="excluir_livro.php?id=<?= $livro["id"] ?>">Excluir</a>
+                            <a href="excluir.php?id=<?= $livro["id"] ?>">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -67,7 +67,7 @@ $livros = $comando->fetchAll(PDO::FETCH_ASSOC);
 
     <br>
 
-    <a href="home.php">Voltar</a>
+    <a href="../home.php">Voltar</a>
 </body>
 
 </html>

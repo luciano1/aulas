@@ -1,7 +1,7 @@
 <?php
 
 // Impede acesso de usuários sem login.
-require_once "proteger.php";
+require_once "../includes/proteger.php";
 ?>
 <!DOCTYPE html>
 
@@ -42,9 +42,9 @@ require_once "proteger.php";
 
     <br>
 
-    <a href="livros.php">Ver livros cadastrados</a>
+    <a href="listar.php">Ver livros cadastrados</a>
     <br><br>
-    <a href="home.php">Voltar</a>
+    <a href="../home.php">Voltar</a>
 </body>
 
 </html>

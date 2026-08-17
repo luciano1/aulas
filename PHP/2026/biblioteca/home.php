@@ -2,7 +2,7 @@
 
 // Inclui o arquivo responsável por verificar
 // se o usuário está autenticado.
-require_once "proteger.php";
+require_once "includes/proteger.php";
 
 // Tenta recuperar o cookie categoria_favorita.
 //
@@ -41,31 +41,19 @@ $categoriaFavorita = $_COOKIE["categoria_favorita"] ?? "";
 
     <!-- Menu principal do sistema -->
 
-    <a href="cadastro_livro.php">
+    <a href="livros/cadastrar.php">
         Cadastrar livro
     </a>
 
     <br><br>
 
-    <a href="livros.php">
+    <a href="livros/listar.php">
         Gerenciar livros
     </a>
 
     <br><br>
 
-    <a href="cadastro_revista.php">
-        Cadastrar revista
-    </a>
-
-    <br><br>
-
-    <a href="revistas.php">
-        Gerenciar revistas
-    </a>
-
-    <br><br>
-
-    <a href="logout.php">
+    <a href="auth/logout.php">
         Sair
     </a>
 
@@ -103,11 +91,11 @@ $categoriaFavorita = $_COOKIE["categoria_favorita"] ?? "";
 
     <!--
         O formulário envia a categoria escolhida
-        para salvar_preferencia.php utilizando POST.
+        para preferencias/salvar.php utilizando POST.
     -->
 
     <form
-        action="salvar_preferencia.php"
+        action="preferencias/salvar.php"
         method="POST"
     >
 
@@ -189,7 +177,7 @@ $categoriaFavorita = $_COOKIE["categoria_favorita"] ?? "";
 
         <br>
 
-        <a href="remover_preferencia.php">
+        <a href="preferencias/remover.php">
             Remover preferência
         </a>
 
