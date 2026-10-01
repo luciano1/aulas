@@ -1,0 +1,88 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff5f6;
+    color: #333;
+}
+main {
+    padding-top: 130px;
+}
+.siteHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgb(172, 50, 89);
+    
+}
+.navBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+.brandLogo {
+    position: absolute;
+    left: 2px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #b72f59;
+    text-decoration: none;
+}
+
+.menuList {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menuLink {
+    color: #333;
+    text-decoration: none;
+}
+
+.menuLink:hover {
+    color: #b72f59;
+}
+
+.contentContainer {
+    padding: 30px 20px;
+    scroll-margin-top: 130px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.primaryButton {
+    display: inline-block;
+    background-color: #b72f59;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.siteFooter {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
